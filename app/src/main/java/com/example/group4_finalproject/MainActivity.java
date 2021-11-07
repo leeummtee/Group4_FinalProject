@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-
     }
 
     //hello, how are you, I am underwater now HUhuhuHUHUHUHUH

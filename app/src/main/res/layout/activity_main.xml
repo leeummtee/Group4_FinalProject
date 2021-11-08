@@ -23,6 +23,7 @@
         android:layout_width="184dp"
         android:layout_height="69dp"
         android:text="Button"
+        android:background="@drawable/roundedbutton"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="414dp" />
 
@@ -31,6 +32,7 @@
         android:layout_width="184dp"
         android:layout_height="69dp"
         android:text="Button"
+        android:background="@drawable/roundedbutton"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="506dp" />
 
@@ -38,7 +40,10 @@
         android:id="@+id/titleTextView"
         android:layout_width="174dp"
         android:layout_height="99dp"
-        android:text="HELLOHELLOHELLOHELLOHELLOHELLOHELLO"
+        android:gravity="center"
+        android:text="Welcome to Tranquility"
+
+        android:textColor="@color/white"
         tools:layout_editor_absoluteX="118dp"
         tools:layout_editor_absoluteY="69dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

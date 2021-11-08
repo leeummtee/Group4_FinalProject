@@ -8,5 +8,37 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="184dp"
+        android:layout_height="69dp"
+        android:text="Button"
+        android:background="@drawable/roundedbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="319dp" />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="184dp"
+        android:layout_height="69dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="414dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="184dp"
+        android:layout_height="69dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="174dp"
+        android:layout_height="99dp"
+        android:text="HELLOHELLOHELLOHELLOHELLOHELLOHELLO"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="69dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

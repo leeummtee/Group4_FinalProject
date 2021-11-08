@@ -12,11 +12,12 @@
         android:id="@+id/button"
         android:layout_width="184dp"
         android:layout_height="69dp"
-        android:text="Button"
         android:background="@drawable/roundedbutton"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="319dp" />
+        tools:layout_editor_absoluteY="301dp" />
 
     <Button
         android:id="@+id/button4"
@@ -31,10 +32,10 @@
         android:id="@+id/button5"
         android:layout_width="184dp"
         android:layout_height="69dp"
-        android:text="Button"
         android:background="@drawable/roundedbutton"
+        android:text="Button"
         tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="506dp" />
+        tools:layout_editor_absoluteY="526dp" />
 
     <TextView
         android:id="@+id/titleTextView"

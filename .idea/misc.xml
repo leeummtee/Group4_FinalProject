@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2708333333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2708333333333333" />
+        <entry key="app/src/main/res/drawable/rectangle_6.xml" value="0.365625" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.2708333333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27936542833250055" />
         <entry key="app/src/main/res/layout/month_view.xml" value="0.35510974729373884" />

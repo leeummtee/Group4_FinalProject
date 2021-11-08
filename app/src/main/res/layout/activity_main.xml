@@ -8,12 +8,14 @@
     tools:context=".MainActivity">
 
 
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="184dp"
         android:layout_height="69dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="View Moods"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,35 +27,21 @@
         android:layout_width="184dp"
         android:layout_height="69dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="View Profile Page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.625"
-        tools:ignore="MissingConstraints" /><![CDATA[
-
-    =======
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.747"
         tools:ignore="MissingConstraints" />
->>>>>>> bb551606aa30c6e17854364ae5dc2f8d580dc578
-
-
-
-    ]]>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="184dp"
         android:layout_height="69dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Settings"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,12 +52,12 @@
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="174dp"
-        android:layout_height="99dp"
+        android:layout_width="240dp"
+        android:layout_height="108dp"
         android:gravity="center"
         android:text="Welcome to Tranquility"
-
         android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

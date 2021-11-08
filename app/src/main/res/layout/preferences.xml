@@ -7,6 +7,17 @@
     android:background="@drawable/night_gradient"
     tools:context=".MainActivity">
 
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Switch"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="292dp"
+        tools:layout_editor_absoluteY="411dp" />
+
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="174dp"

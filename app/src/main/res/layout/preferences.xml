@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night_gradient"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="174dp"
+        android:layout_height="99dp"
+        android:gravity="center"
+        android:text="Settings"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="69dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="184dp"
+        android:layout_height="69dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Dark Mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="318dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="184dp"
+        android:layout_height="69dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Reminders"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Switch"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="292dp"
+        tools:layout_editor_absoluteY="331dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,18 +14,11 @@
         android:layout_height="69dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-<<<<<<< HEAD
-=======
         app:layout_constraintBottom_toBottomOf="parent"
->>>>>>> bb551606aa30c6e17854364ae5dc2f8d580dc578
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
-        tools:layout_editor_absoluteY="301dp" />
-=======
         app:layout_constraintTop_toTopOf="parent" />
->>>>>>> bb551606aa30c6e17854364ae5dc2f8d580dc578
+
 
     <Button
         android:id="@+id/button4"
@@ -39,18 +32,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.625"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints" /><![CDATA[
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="184dp"
-        android:layout_height="69dp"
-        android:background="@drawable/roundedbutton"
-        android:text="Button"
-<<<<<<< HEAD
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="526dp" />
-=======
+    =======
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -59,6 +43,24 @@
         app:layout_constraintVertical_bias="0.747"
         tools:ignore="MissingConstraints" />
 >>>>>>> bb551606aa30c6e17854364ae5dc2f8d580dc578
+
+
+
+    ]]>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="184dp"
+        android:layout_height="69dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 
     <TextView
         android:id="@+id/titleTextView"

@@ -4,59 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/night_gradient"
     tools:context=".MainActivity">
 
 
-
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="184dp"
-        android:layout_height="69dp"
-        android:background="@drawable/roundedbutton"
-        android:text="View Moods"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="184dp"
-        android:layout_height="69dp"
-        android:background="@drawable/roundedbutton"
-        android:text="View Profile Page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="184dp"
-        android:layout_height="69dp"
-        android:background="@drawable/roundedbutton"
-        android:text="Settings"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746" />
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="240dp"
         android:layout_height="108dp"
         android:gravity="center"
-        android:text="Welcome to Tranquility"
-        android:textColor="@color/white"
+        android:text="Welcome to Steps"
+        android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,4 +23,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.061"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
 </androidx.constraintlayout.widget.ConstraintLayout>

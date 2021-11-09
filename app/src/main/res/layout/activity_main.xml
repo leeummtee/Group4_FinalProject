@@ -55,7 +55,7 @@
         android:layout_width="240dp"
         android:layout_height="108dp"
         android:gravity="center"
-        android:text="Welcome to Tranquility"
+        android:text="Welcome to Steps"
         android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"

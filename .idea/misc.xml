@@ -8,10 +8,10 @@
         <entry key="app/src/main/res/drawable/rectangle_6.xml" value="0.365625" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.2708333333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27936542833250055" />
-        <entry key="app/src/main/res/layout/month_view.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/month_view.xml" value="0.29645371765403333" />
         <entry key="app/src/main/res/layout/moods.xml" value="0.27459875338726364" />
         <entry key="app/src/main/res/layout/preferences.xml" value="0.2546875" />
-        <entry key="app/src/main/res/layout/profile.xml" value="0.30842391304347827" />
+        <entry key="app/src/main/res/layout/profile.xml" value="0.3163756086979848" />
         <entry key="app/src/main/res/layout/week_view.xml" value="0.19601744114776126" />
       </map>
     </option>

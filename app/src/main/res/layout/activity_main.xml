@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="drawable/"
     tools:context=".MainActivity">
 
 
@@ -14,6 +15,7 @@
         android:layout_height="108dp"
         android:gravity="center"
         android:text="Welcome to Steps"
+        android:fontFamily=""
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"

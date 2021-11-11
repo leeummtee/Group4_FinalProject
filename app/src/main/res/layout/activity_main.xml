@@ -14,7 +14,7 @@
         android:layout_height="108dp"
         android:gravity="center"
         android:text="Welcome to Steps"
-        android:fontFamily="@font/Montserrat-Bold"
+        android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"

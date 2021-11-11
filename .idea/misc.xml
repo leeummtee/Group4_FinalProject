@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2708333333333333" />
         <entry key="app/src/main/res/drawable/rectangle_6.xml" value="0.365625" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.2708333333333333" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/month_view.xml" value="0.29645371765403333" />
         <entry key="app/src/main/res/layout/moods.xml" value="0.27459875338726364" />
         <entry key="app/src/main/res/layout/preferences.xml" value="0.2546875" />

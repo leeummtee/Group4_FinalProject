@@ -16,10 +16,25 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.434"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/montserrat_thin"
+        android:gravity="center"
+        android:text="km"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -40,8 +55,8 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="103dp"
-        android:layout_height="47dp"
+        android:layout_width="127dp"
+        android:layout_height="46dp"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="1h25m"
@@ -49,24 +64,26 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.434"
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="48dp"
         android:layout_height="43dp"
         android:fontFamily="@font/montserrat_thin"
         android:gravity="center"
-        android:text="km"
+        android:text="time"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -82,21 +99,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:fontFamily="@font/montserrat_thin"
-        android:gravity="center"
-        android:text="time"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

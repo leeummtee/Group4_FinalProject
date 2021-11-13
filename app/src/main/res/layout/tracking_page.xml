@@ -19,37 +19,40 @@
         app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602"
+        app:layout_constraintVertical_bias="0.499"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/stepCounterTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="30dp"
+<!--    https://www.youtube.com/watch?v=YsHHXg1vbcc-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:progress="60"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="48dp"
         android:layout_height="43dp"
         android:fontFamily="@font/montserrat_thin"
         android:gravity="center"
-        android:text="time"
+        android:text="kcal"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652"
+        app:layout_constraintVertical_bias="0.549"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -66,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602"
+        app:layout_constraintVertical_bias="0.498"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -82,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602"
+        app:layout_constraintVertical_bias="0.498"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -97,24 +100,38 @@
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652"
+        app:layout_constraintVertical_bias="0.549"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView4"
         android:layout_width="48dp"
         android:layout_height="43dp"
         android:fontFamily="@font/montserrat_thin"
         android:gravity="center"
-        android:text="kcal"
+        android:text="time"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652"
+        app:layout_constraintVertical_bias="0.549"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/stepCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215" />
 
     <TextView
         android:id="@+id/textView8"
@@ -128,7 +145,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437"
+        app:layout_constraintVertical_bias="0.276"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,10 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,14 +21,20 @@ public class MainActivity extends AppCompatActivity {
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
 
+    private ProgressBar progressBar;
+    int i = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracking_page);
 
+        progressBar = findViewById(R.id.progressBar);
+
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
         SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
 
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
@@ -42,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if(MagnitudeDelta > 1) {
                         stepCount++;
+                        progressBar.setProgress(stepCount);
                     }
                     textViewStepCounter.setText(stepCount.toString());
                 }
@@ -52,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
+
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 

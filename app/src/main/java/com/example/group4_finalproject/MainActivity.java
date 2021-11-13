@@ -15,11 +15,20 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 //    https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
-    private TextView textViewStepCounter;
+    private TextView textViewStepCounter, dateTextView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
+
+
+
 
     private ProgressBar progressBar;
     int i = 0;
@@ -30,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.tracking_page);
 
         progressBar = findViewById(R.id.progressBar);
+
+        //https://www.youtube.com/watch?v=Le47R9H3qow&ab_channel=CodinginFlow
+        dateTextView = (TextView) findViewById(R.id.dateText);
+        Calendar calendar = Calendar.getInstance();
+        String date = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        dateTextView.setText(date);
 
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
         SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -79,7 +94,4 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         stepCount = sharedPreferences.getInt("stepCount", 0);
     }
-
-    //hello, how are you, I am underwater now HUhuhuHUHUHUHUH
-    //YO WAT UP
 }

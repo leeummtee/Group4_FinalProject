@@ -22,13 +22,10 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-//    https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
+    //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
     private TextView textViewStepCounter, dateTextView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
-
-
-
 
     private ProgressBar progressBar;
     int i = 0;

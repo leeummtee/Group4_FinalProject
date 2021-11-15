@@ -26,15 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewStepCounter, dateTextView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
-
     private ProgressBar progressBar;
     int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tracking_page);
-
+        setContentView(R.layout.activity_main);
         progressBar = findViewById(R.id.progressBar);
 
         //https://www.youtube.com/watch?v=Le47R9H3qow&ab_channel=CodinginFlow
@@ -46,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
         SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
 
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
@@ -70,10 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
-
             }
         };
-
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 

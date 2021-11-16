@@ -36,9 +36,26 @@ public class Register extends Activity {
         editor.putString("confirmedPassword", confirmPasswordEditText.getText().toString());
         editor.putString("registeredEmail", emailEditText.getText().toString());
 
-        Toast.makeText(this, "Username and password saved to Preferences. Going to Login page", Toast.LENGTH_LONG).show();
-        Intent intent= new Intent(this, LoginActivity.class);
-        startActivity(intent);
         editor.commit();
+
+        //retrieving the registered login data from SharedPrefs
+        String registeredPassword = sharedPrefs.getString("registeredPassword", DEFAULT);
+
+        //comparing the registered info with the inputted login info
+        if (registeredPassword.equals(confirmPasswordEditText.getText().toString()))
+        {
+            Toast.makeText(this, "Username and password saved to Preferences. Going to Login page", Toast.LENGTH_LONG).show();
+            Intent intent= new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_LONG).show();
+        }
+
+//        Toast.makeText(this, "Username and password saved to Preferences. Going to Login page", Toast.LENGTH_LONG).show();
+//        Intent intent= new Intent(this, LoginActivity.class);
+//        startActivity(intent);
+//        editor.commit();
     }
 }

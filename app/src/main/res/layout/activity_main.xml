@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/loginLayout">
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/loginPasswordEditText"
         android:layout_width="244dp"
         android:layout_height="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,16 +39,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="460dp"
         android:fontFamily="@font/roboto_light"
         android:text="Username"
         android:textColor="@color/black"
         android:textSize="15dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="247dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/loginUsernameEditText"
         android:layout_width="244dp"
         android:layout_height="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +81,7 @@
         android:layout_width="294dp"
         android:layout_height="55dp"
         android:text="Sign Up"
+        android:onClick="backToSignUp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -90,6 +95,7 @@
         android:layout_width="294dp"
         android:layout_height="55dp"
         android:text="Log in"
+        android:onClick="retrieve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

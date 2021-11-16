@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.tracking_page);
         progressBar = findViewById(R.id.progressBar);
 
         //https://www.youtube.com/watch?v=Le47R9H3qow&ab_channel=CodinginFlow

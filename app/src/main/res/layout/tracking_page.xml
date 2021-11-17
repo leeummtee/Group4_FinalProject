@@ -165,6 +165,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
+<!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"

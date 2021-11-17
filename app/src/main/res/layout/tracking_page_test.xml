@@ -7,20 +7,20 @@
     android:weightSum="1"
     tools:context="com.example.group4_finalproject.MainActivity">
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight=".50"-->
-<!--        android:background="#22bfb2"-->
-<!--        android:text="Google Map Demo"-->
-<!--        android:textColor="#ffffff"-->
-<!--        android:gravity="center"/>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".50"
+        android:background="#22bfb2"
+        android:text="Google Map Demo"
+        android:textColor="#ffffff"
+        android:gravity="center"/>
 
-<!--    <fragment-->
-<!--        android:id="@+id/map"-->
-<!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight=".50"/>-->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".50"/>
 
 </LinearLayout>

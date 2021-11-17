@@ -35,7 +35,6 @@ public class Register extends Activity {
         editor.putString("registeredPassword", passwordEditText.getText().toString());
         editor.putString("confirmedPassword", confirmPasswordEditText.getText().toString());
         editor.putString("registeredEmail", emailEditText.getText().toString());
-
         editor.commit();
 
         //retrieving the registered login data from SharedPrefs

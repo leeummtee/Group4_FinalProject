@@ -2,6 +2,7 @@ package com.example.group4_finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -28,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private Integer stepCount = 0;
     private ProgressBar progressBar;
     int i = 0;
+    private Integer goal = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracking_page);
         progressBar = findViewById(R.id.progressBar);
+        progressBar.setMax(goal);
 
         //https://www.youtube.com/watch?v=Le47R9H3qow&ab_channel=CodinginFlow
         dateTextView = (TextView) findViewById(R.id.dateText);
@@ -85,5 +88,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         stepCount = sharedPreferences.getInt("stepCount", 0);
+    }
+
+    public void goToGoals(View view) {
+        Intent intent= new Intent(this, GoalsActivity.class);
+        startActivity(intent);
     }
 }

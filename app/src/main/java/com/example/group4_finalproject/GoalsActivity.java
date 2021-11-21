@@ -19,7 +19,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 public class GoalsActivity extends AppCompatActivity {
-    private Integer goal = 100;
+    private Integer goal;
     private EditText stepGoalEditText;
 
     @Override
@@ -27,13 +27,14 @@ public class GoalsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.goals);
         stepGoalEditText = (EditText)findViewById(R.id.stepGoalEditText);
-
     }
 
     public void setGoals (View view) {
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
-        editor.putString("inputtedStepGoal", stepGoalEditText.getText().toString());
+//        editor.putString("inputtedStepGoal", stepGoalEditText.getText().toString());
+        goal = Integer.parseInt(stepGoalEditText.getText().toString());
+        editor.putInt("inputtedStepGoal", goal);
         editor.commit();
 
         Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();

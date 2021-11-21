@@ -38,26 +38,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracking_page);
         progressBar = findViewById(R.id.progressBar);
-//        progressBar.setMax(goal);
 
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
 
         //retrieving the registered login data from SharedPrefs
-        String inputtedStepGoal = sharedPrefs.getString("inputtedStepGoal", DEFAULT);
+        int inputtedStepGoal = sharedPrefs.getInt("inputtedStepGoal", 0);
 
-//        Integer i = Integer.parseInt("inputtedStepGoal");
-
-//        try{
-//            sharedPrefs.getInt("inputtedStepGoal", 0);
-//        }catch (ClassCastException e){
-//            Integer uid = Integer.parseInt(sharedPrefs.getString("inputtedStepGoal", null);
-//            if(uid != null)
-//                sharedPrefs.edit().putInt("inputtedStepGoal", uid).commit();
-//        }
-
-
-
-//        progressBar.setMax(i);
+        progressBar.setMax(inputtedStepGoal);
 
         //https://www.youtube.com/watch?v=Le47R9H3qow&ab_channel=CodinginFlow
         dateTextView = (TextView) findViewById(R.id.dateText);

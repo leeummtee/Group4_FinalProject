@@ -171,7 +171,6 @@
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFEFDC"
         app:itemBackground ="@color/white"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"

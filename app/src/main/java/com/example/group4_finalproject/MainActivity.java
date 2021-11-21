@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
 
         //retrieving the registered login data from SharedPrefs
-        int inputtedStepGoal = sharedPrefs.getInt("inputtedStepGoal", 0);
+        int inputtedStepGoal = sharedPrefs.getInt("inputtedStepGoal", 100);
 
         progressBar.setMax(inputtedStepGoal);
 

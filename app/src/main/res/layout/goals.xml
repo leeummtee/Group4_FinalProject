@@ -97,7 +97,7 @@
         android:layout_width="251dp"
         android:layout_height="22dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Set Goal for Amount of kcal"
+        android:text="Set Goal for Amount of cal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"

@@ -15,8 +15,7 @@ public class Database {
         helper = new Helper(context);
     }
 
-    public long insertData (String km, String kcal, String time, String steps)
-    {
+    public long insertData (String km, String kcal, String time, String steps) {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Constants.KM, km);

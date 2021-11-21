@@ -42,7 +42,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
         public TextView kmTextView;
         public TextView kcalTextView;
         public TextView timeTextView;
@@ -67,7 +66,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         @Override
         public void onClick(View view) {
-          
         }
     }
 }

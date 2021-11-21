@@ -28,7 +28,6 @@ public class Database {
 
     public Cursor getData() {
         SQLiteDatabase db = helper.getWritableDatabase();
-
         String[] columns = {Constants.UID, Constants.KM, Constants.KCAL, Constants.TIME, Constants.STEPS};
         Cursor cursor = db.query(Constants.TABLE_NAME, columns, null, null, null, null, null);
         return cursor;

@@ -101,4 +101,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent= new Intent(this, GoalsActivity.class);
         startActivity(intent);
     }
+
+    public void calculateKCal(Integer g) {
+
+    }
 }

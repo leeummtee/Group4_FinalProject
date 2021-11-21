@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private Integer stepCount = 0;
     private ProgressBar progressBar;
     int i = 0;
-    private Integer goal = 100;
     public static final String DEFAULT = "not available";
 
     @Override

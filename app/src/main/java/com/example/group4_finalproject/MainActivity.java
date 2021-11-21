@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     int i = 0;
     public static final String DEFAULT = "not available";
+    MyDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +102,21 @@ public class MainActivity extends AppCompatActivity {
     public void goToGoals(View view) {
         Intent intent= new Intent(this, GoalsActivity.class);
         startActivity(intent);
+    }
+
+    public void addData (View view)
+    {
+//        String name = textViewStepCounter.getText().toString();
+//        Toast.makeText(this, plantName, Toast.LENGTH_SHORT).show();
+//        long id = db.insertData(steps, textViewStepCounter);
+//        if (id < 0)
+//        {
+//            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
+//        }
+//        else
+//        {
+//            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     public void calculateKCal(Integer g) {

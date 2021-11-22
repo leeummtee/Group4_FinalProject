@@ -16,6 +16,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Location;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
@@ -63,11 +64,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.mapView);
-//        mapFragment.getMapAsync(this);
-
         setContentView(R.layout.tracking_page);
         progressBar = findViewById(R.id.progressBar);
 
@@ -87,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
+        mapFragment.getMapAsync(this);
 
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
@@ -141,6 +141,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Intent intent = new Intent(this, GoalsActivity.class);
         startActivity(intent);
     }
+
+//    private void setUpMapIfNeeded() {
+//        // Do a null check to confirm that we have not already instantiated the map.
+//        if (mMap == null) {
+//            // Try to obtain the map from the SupportMapFragment.
+//            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView)).getMap();
+//            mMap.setMyLocationEnabled(true);
+//            // Check if we were successful in obtaining the map.
+//            if (mMap != null) {
+//                mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+//                    @Override
+//                    public void onMyLocationChange(Location arg0) {
+//                        mMap.addMarker(new MarkerOptions().position(new LatLng(arg0.getLatitude(), arg0.getLongitude())).title("It's Me!"));
+//                    }
+//                });
+//            }
+//        }
+//    }
 
     public void addData(View view) {
 //        String name = textViewStepCounter.getText().toString();

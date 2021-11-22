@@ -1,12 +1,17 @@
 package com.example.group4_finalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -39,7 +44,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
     //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
     private TextView textViewStepCounter, dateTextView;
     private double MagnitudePrevious = 0;
@@ -55,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //maps
-//        binding = ActivityMapsBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
+        binding = ActivityMapsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.map);
-//        mapFragment.getMapAsync((OnMapReadyCallback) this);
+//                .findFragmentById(R.id.mapView);
+//        mapFragment.getMapAsync(this);
 
         setContentView(R.layout.tracking_page);
         progressBar = findViewById(R.id.progressBar);
@@ -80,22 +85,22 @@ public class MainActivity extends AppCompatActivity {
         dateTextView.setText(date);
 
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
-        SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
-                if(sensorEvent != null) {
+                if (sensorEvent != null) {
                     float x_acceleration = sensorEvent.values[0];
                     float y_acceleration = sensorEvent.values[1];
                     float z_acceleration = sensorEvent.values[2];
 
-                    double Magnitude = Math.sqrt(x_acceleration*x_acceleration + y_acceleration*y_acceleration + z_acceleration*z_acceleration);
+                    double Magnitude = Math.sqrt(x_acceleration * x_acceleration + y_acceleration * y_acceleration + z_acceleration * z_acceleration);
                     double MagnitudeDelta = Magnitude - MagnitudePrevious;
                     MagnitudePrevious = Magnitude;
 
-                    if(MagnitudeDelta > 1) {
+                    if (MagnitudeDelta > 1) {
                         stepCount++;
                         progressBar.setProgress(stepCount);
                     }
@@ -108,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0))
+                .title("Marker"));
     }
 
     protected void onPause() {
@@ -126,12 +138,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToGoals(View view) {
-        Intent intent= new Intent(this, GoalsActivity.class);
+        Intent intent = new Intent(this, GoalsActivity.class);
         startActivity(intent);
     }
 
-    public void addData (View view)
-    {
+    public void addData(View view) {
 //        String name = textViewStepCounter.getText().toString();
 //        Toast.makeText(this, plantName, Toast.LENGTH_SHORT).show();
 //        long id = db.insertData(steps, textViewStepCounter);
@@ -149,8 +160,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //https://stackoverflow.com/questions/19353255/how-to-put-google-maps-v2-on-a-fragment-using-viewpager
-//    public class MapFragment extends Fragment {
+
+
+    //    //https://stackoverflow.com/questions/19353255/how-to-put-google-maps-v2-on-a-fragment-using-viewpager
+//    public class MapFragment extends Fragment implements OnMapReadyCallback {
 //        MapView mMapView;
 //        private GoogleMap googleMap;
 //
@@ -158,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 //        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //            View rootView = inflater.inflate(R.layout.tracking_page, container, false);
 //
-//            mMapView = (MapView) rootView.findViewById(R.id.trackingView);
+//            mMapView = (MapView) rootView.findViewById(R.id.mapView);
 //            mMapView.onCreate(savedInstanceState);
 //
 //            mMapView.onResume(); // needed to get the map to display immediately
@@ -170,11 +183,13 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //
 //            mMapView.getMapAsync(new OnMapReadyCallback() {
+//
 //                @Override
 //                public void onMapReady(GoogleMap mMap) {
 //                    googleMap = mMap;
 //
 //                    // For showing a move to my location button
+//
 //                    googleMap.setMyLocationEnabled(true);
 //
 //                    // For dropping a marker at a point on the Map
@@ -212,6 +227,11 @@ public class MainActivity extends AppCompatActivity {
 //        public void onLowMemory() {
 //            super.onLowMemory();
 //            mMapView.onLowMemory();
+//        }
+//
+//        @Override
+//        public void onMapReady(@NonNull GoogleMap googleMap) {
+//
 //        }
 //    }
 }

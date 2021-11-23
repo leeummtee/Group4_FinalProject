@@ -66,11 +66,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     MyDatabase db;
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private boolean isMoving = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("numOfSteps", String.valueOf(stepCount));
+        Log.d("numOfStepsOnCreate", String.valueOf(stepCount));
 
 
         //maps
@@ -122,7 +123,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
+                if (isMoving == false) stepCount = 0;
                 if (sensorEvent != null) {
+                    isMoving = true;
                     float x_acceleration = sensorEvent.values[0];
                     float y_acceleration = sensorEvent.values[1];
                     float z_acceleration = sensorEvent.values[2];

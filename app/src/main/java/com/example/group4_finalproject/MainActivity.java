@@ -1,6 +1,7 @@
 package com.example.group4_finalproject;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -144,30 +145,31 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-            && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                Log.d("testtt", "YOOOO");
-                return;
-        }
 
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        double longitude = location.getLongitude();
-        double latitude = location.getLatitude();
-
-//        Log.d("longTest", String.valueOf(longitude));
-//        Log.d("latTest", String.valueOf(latitude));
+//        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+//            && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//                Log.d("testtt", "YOOOO");
+//                return;
+//        }
+//        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+//        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//        double longitude = location.getLongitude();
+//        double latitude = location.getLatitude();
 //
-//        Log.d("testtt", "YOOOO");
+////        Log.d("longTest", String.valueOf(longitude));
+////        Log.d("latTest", String.valueOf(latitude));
+////
+////        Log.d("testtt", "YOOOO");
 
-//        LatLng surreyCentral = new LatLng(49.2827,-123.1287);
-        LatLng surreyCentral = new LatLng(latitude,longitude);
+        LatLng surreyCentral = new LatLng(49.1879,-122.8500);
+//        LatLng surreyCentral = new LatLng(latitude,longitude);
         googleMap.addMarker(new MarkerOptions()
                 .position(surreyCentral)
                 .title("Marker"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(surreyCentral, 10));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(surreyCentral, 15));
     }
 
     protected void onPause() {

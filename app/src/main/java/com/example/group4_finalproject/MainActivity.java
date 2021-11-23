@@ -54,6 +54,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+//tracking page, which includes the step counter and map
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
     private static final int PERMISSION_REQUEST_CODE = 1;
     //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
@@ -71,8 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("numOfStepsOnCreate", String.valueOf(stepCount));
-
+//        Log.d("numOfStepsOnCreate", String.valueOf(stepCount));
 
         //maps
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
@@ -82,11 +82,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         progressBar = findViewById(R.id.progressBar);
         progressBar.setProgress(stepCount);
 
+        //creating a sharedprefs object
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-
         //retrieving the registered login data from SharedPrefs
         int inputtedStepGoal = sharedPrefs.getInt("inputtedStepGoal", 100);
 
+        //setting the progress bar's max value to the goal set by the user
         progressBar.setMax(inputtedStepGoal);
 
         //https://www.youtube.com/watch?v=Le47R9H3qow&ab_channel=CodinginFlow
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 //        mapIntent();
 
-
+        //checking permissions
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
 
             if (checkSelfPermission(Manifest.permission.SEND_SMS)
@@ -118,25 +119,26 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
 
-
-
+        //step counter
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
+                Log.d("numOfStepsOnCreate", String.valueOf(stepCount));
                 if (isMoving == false) stepCount = 0;
                 if (sensorEvent != null) {
                     isMoving = true;
-                    float x_acceleration = sensorEvent.values[0];
-                    float y_acceleration = sensorEvent.values[1];
-                    float z_acceleration = sensorEvent.values[2];
+                    float x_acceleration = sensorEvent.values[0];   //retrieving the sensor value from array position 0
+                    float y_acceleration = sensorEvent.values[1];   //retrieving the sensor value from array position 1
+                    float z_acceleration = sensorEvent.values[2];   //retrieving the sensor value from array position 2
 
                     double Magnitude = Math.sqrt(x_acceleration * x_acceleration + y_acceleration * y_acceleration + z_acceleration * z_acceleration);
                     double MagnitudeDelta = Magnitude - MagnitudePrevious;
                     MagnitudePrevious = Magnitude;
 
+                    //if there is a significant amount of change
                     if (MagnitudeDelta > 1) {
-                        stepCount++;
-                        progressBar.setProgress(stepCount);
+                        stepCount++;    //increase the step counter
+                        progressBar.setProgress(stepCount); //set the progress bar's progress based on steps
                     }
                     textViewStepCounter.setText(stepCount.toString());
                 }
@@ -171,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 ////
 ////        Log.d("testtt", "YOOOO");
 
+        //setting the map to surrey central
         LatLng surreyCentral = new LatLng(49.1879,-122.8500);
 //        LatLng surreyCentral = new LatLng(latitude,longitude);
         googleMap.addMarker(new MarkerOptions()

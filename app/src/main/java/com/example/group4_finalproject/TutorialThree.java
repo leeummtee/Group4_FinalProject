@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//page for displaying the first page of the tutorial
 public class TutorialThree extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

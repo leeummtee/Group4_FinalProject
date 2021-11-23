@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 //We used the "SharedPrefsNew" example as the base code
+//this is the register page where users create an account
 public class Register extends Activity {
     EditText usernameEditText, passwordEditText, confirmPasswordEditText, emailEditText;
     View mainView;
@@ -29,6 +30,7 @@ public class Register extends Activity {
 
     }
 
+    //once the submit button is called
     public void submit (View view) {
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
@@ -52,10 +54,5 @@ public class Register extends Activity {
         {
             Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_LONG).show();
         }
-
-//        Toast.makeText(this, "Username and password saved to Preferences. Going to Login page", Toast.LENGTH_LONG).show();
-//        Intent intent= new Intent(this, LoginActivity.class);
-//        startActivity(intent);
-//        editor.commit();
     }
 }

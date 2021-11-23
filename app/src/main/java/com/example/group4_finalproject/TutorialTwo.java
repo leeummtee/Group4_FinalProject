@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//page for displaying the first page of the tutorial
 public class TutorialTwo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +15,6 @@ public class TutorialTwo extends AppCompatActivity {
     }
 
     public void tutButton (View view) {
-//        Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
         Intent intent= new Intent(this, TutorialThree.class);
         startActivity(intent);
     }

@@ -15,7 +15,7 @@ public class TutorialFour extends AppCompatActivity {
 
     public void tutButton (View view) {
 //        Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
-        Intent intent= new Intent(this, MainActivity.class);
+        Intent intent= new Intent(this, GoalsActivity.class);
         startActivity(intent);
     }
 }

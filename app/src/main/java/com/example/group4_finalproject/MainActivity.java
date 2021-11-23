@@ -3,6 +3,7 @@ package com.example.group4_finalproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
@@ -17,10 +18,15 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+
 import android.net.Uri;
 import android.opengl.GLSurfaceView;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +54,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
+    private static final int PERMISSION_REQUEST_CODE = 1;
     //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
     private TextView textViewStepCounter, dateTextView;
     private double MagnitudePrevious = 0;
@@ -91,6 +98,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 //        mapIntent();
 
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+
+            if (checkSelfPermission(Manifest.permission.SEND_SMS)
+                    == PackageManager.PERMISSION_DENIED) {
+
+                Log.d("permission", "permission denied to SEND_SMS - requesting it");
+                String[] permissions = {Manifest.permission.SEND_SMS};
+
+                requestPermissions(permissions, PERMISSION_REQUEST_CODE);
+
+            }
+        }
+
+
+
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
@@ -118,9 +141,29 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
+
+
+
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LatLng surreyCentral = new LatLng(49.2827,-123.1287);
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+            && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                Log.d("testtt", "YOOOO");
+                return;
+        }
+
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        double longitude = location.getLongitude();
+        double latitude = location.getLatitude();
+
+//        Log.d("longTest", String.valueOf(longitude));
+//        Log.d("latTest", String.valueOf(latitude));
+//
+//        Log.d("testtt", "YOOOO");
+
+//        LatLng surreyCentral = new LatLng(49.2827,-123.1287);
+        LatLng surreyCentral = new LatLng(latitude,longitude);
         googleMap.addMarker(new MarkerOptions()
                 .position(surreyCentral)
                 .title("Marker"));
@@ -153,24 +196,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
         startActivity(mapIntent);
     }
-
-//    private void setUpMapIfNeeded() {
-//        // Do a null check to confirm that we have not already instantiated the map.
-//        if (mMap == null) {
-//            // Try to obtain the map from the SupportMapFragment.
-//            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView)).getMap();
-//            mMap.setMyLocationEnabled(true);
-//            // Check if we were successful in obtaining the map.
-//            if (mMap != null) {
-//                mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
-//                    @Override
-//                    public void onMyLocationChange(Location arg0) {
-//                        mMap.addMarker(new MarkerOptions().position(new LatLng(arg0.getLatitude(), arg0.getLongitude())).title("It's Me!"));
-//                    }
-//                });
-//            }
-//        }
-//    }
 
     public void addData(View view) {
         String name = textViewStepCounter.getText().toString();

@@ -70,12 +70,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("numOfSteps", String.valueOf(stepCount));
+
+
         //maps
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setContentView(R.layout.tracking_page);
         progressBar = findViewById(R.id.progressBar);
+        progressBar.setProgress(stepCount);
 
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
 

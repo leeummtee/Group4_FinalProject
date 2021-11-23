@@ -41,4 +41,18 @@ public class GoalsActivity extends AppCompatActivity {
         Intent intent= new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+//    public void addData(View view) {
+//        String name = textViewStepCounter.getText().toString();
+//        Toast.makeText(this, plantName, Toast.LENGTH_SHORT).show();
+//        long id = db.insertData(steps, textViewStepCounter);
+//        if (id < 0)
+//        {
+//            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
+//        }
+//        else
+//        {
+//            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }

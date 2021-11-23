@@ -17,6 +17,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
+import android.net.Uri;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.group4_finalproject.databinding.ActivityMapsBinding;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
+//        mapIntent();
 
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
@@ -115,14 +118,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LatLng surreyCentral = new LatLng(50,50);
+        LatLng surreyCentral = new LatLng(49.2827,-123.1287);
         googleMap.addMarker(new MarkerOptions()
                 .position(surreyCentral)
                 .title("Marker"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(surreyCentral));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(surreyCentral, 10));
     }
 
     protected void onPause() {
@@ -145,6 +147,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         startActivity(intent);
     }
 
+    public void mapIntent() {
+        //map point based on latitude/longitude//
+        Uri location = Uri.parse("geo:37.422219,-122.08364?z=14"); // z param is zoom level
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+        startActivity(mapIntent);
+    }
+
 //    private void setUpMapIfNeeded() {
 //        // Do a null check to confirm that we have not already instantiated the map.
 //        if (mMap == null) {
@@ -164,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //    }
 
     public void addData(View view) {
-//        String name = textViewStepCounter.getText().toString();
+        String name = textViewStepCounter.getText().toString();
 //        Toast.makeText(this, plantName, Toast.LENGTH_SHORT).show();
 //        long id = db.insertData(steps, textViewStepCounter);
 //        if (id < 0)

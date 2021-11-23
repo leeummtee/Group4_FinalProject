@@ -26,6 +26,7 @@ public class Register extends Activity {
         confirmPasswordEditText = (EditText)findViewById(R.id.confirmPasswordEditText);
         emailEditText = (EditText)findViewById(R.id.emailEditText);
         mainView = (View) findViewById(R.id.signUpActivity);
+
     }
 
     public void submit (View view) {

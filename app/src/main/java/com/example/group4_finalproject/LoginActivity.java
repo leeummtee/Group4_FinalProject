@@ -42,7 +42,7 @@ public class LoginActivity extends Activity {
         if (registeredUsername.equals(loginUsernameEditText.getText().toString()) &&
                 registeredPassword.equals(loginPasswordEditText.getText().toString()))
         {
-            Intent intent= new Intent(this, MainActivity.class);
+            Intent intent= new Intent(this, TutorialOne.class);
             startActivity(intent);
         }
         else

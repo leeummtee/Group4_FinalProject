@@ -1,3 +1,6 @@
+//this class will handle inputs from the user
+//currently this class can set the amount of steps that the user wants to set up as a goal
+
 package com.example.group4_finalproject;
 
 import android.content.Context;
@@ -29,6 +32,8 @@ public class GoalsActivity extends AppCompatActivity {
         stepGoalEditText = (EditText)findViewById(R.id.stepGoalEditText);
     }
 
+    //this method will take the input from the user as a string and then parse it as an int
+    //this will then be placed within a sharedpreference method which then be passed to the main activity
     public void setGoals (View view) {
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
@@ -42,17 +47,4 @@ public class GoalsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void addData(View view) {
-//        String name = textViewStepCounter.getText().toString();
-//        Toast.makeText(this, plantName, Toast.LENGTH_SHORT).show();
-//        long id = db.insertData(steps, textViewStepCounter);
-//        if (id < 0)
-//        {
-//            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
-//        }
-//        else
-//        {
-//            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 }

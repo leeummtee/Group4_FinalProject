@@ -1,3 +1,5 @@
+//this constant class will set up the different values for the database
+
 package com.example.group4_finalproject;
 
 public class Constants {

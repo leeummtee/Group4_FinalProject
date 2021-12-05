@@ -23,13 +23,14 @@ import java.util.Calendar;
 
 public class GoalsActivity extends AppCompatActivity {
     private Integer goal;
-    private EditText stepGoalEditText;
+    private EditText stepGoalEditText, destinationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.goals);
         stepGoalEditText = (EditText)findViewById(R.id.stepGoalEditText);
+        destinationEditText = (EditText)findViewById(R.id.destinationEditText);
     }
 
     //this method will take the input from the user as a string and then parse it as an int
@@ -41,6 +42,7 @@ public class GoalsActivity extends AppCompatActivity {
         goal = Integer.parseInt(stepGoalEditText.getText().toString());
         editor.putInt("inputtedStepGoal", goal);
         editor.commit();
+
 
         Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
         Intent intent= new Intent(this, MainActivity.class);

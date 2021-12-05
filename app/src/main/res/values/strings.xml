@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Group4_FinalProject</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_location_permission">loc1</string>
+    <string name="text_location_permission">loc2</string>
+    <string name="ok">ok</string>
 </resources>

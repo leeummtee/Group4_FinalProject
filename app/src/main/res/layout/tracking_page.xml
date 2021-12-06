@@ -226,7 +226,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.994"
-        tools:ignore="DuplicateIds,OnClick,SpeakableTextPresentCheck" />
+        tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button"
@@ -234,7 +234,6 @@
         android:layout_height="wrap_content"
         android:onClick="goToGoals"
         android:text="Goals"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"

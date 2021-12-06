@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private TextView textViewStepCounter, dateTextView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
+    private Integer calorieCount = 0;
     private ProgressBar progressBar;
     int i = 0;
     public static final String DEFAULT = "not available";
@@ -414,9 +415,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    public void calculateKCal(Integer g) {
-
+    //this method will calculate the general amount of calories burned per step
+    //in general, burn about 0.04 calories per step or 4 calories per 100 steps
+    public int calculateCal(Integer g) {
+      if (stepCount>=1) {
+          calorieCount++;
+      }
+      return calorieCount;
     }
+
+    //this method will calculate the average distance per step
+    //in general, the average step is about 2.5feet
 
     @Override
     public boolean onMyLocationButtonClick() {

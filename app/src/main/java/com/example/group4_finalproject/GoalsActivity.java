@@ -49,4 +49,14 @@ public class GoalsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToHome(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToProfile(View v) {
+        Intent intent = new Intent(this, ProfileStats.class);
+        startActivity(intent);
+    }
+
 }

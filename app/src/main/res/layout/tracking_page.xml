@@ -154,30 +154,31 @@
 
     <ImageButton
         android:id="@+id/goToTrackingPageButton"
-        android:layout_width="41dp"
-        android:layout_height="43dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/black"
-        android:src="@drawable/ic_walking_active"
+        android:src="@drawable/ic_walking_nonactive"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
+        app:layout_constraintVertical_bias="0.976"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/goToGoalsButton"
         android:layout_width="49dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:background="@color/black"
         android:onClick="goToGoals"
-        android:src="@drawable/ic_goals_nonactive"
+        android:src="@drawable/ic_goals_active"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
+        app:layout_constraintVertical_bias="0.973"
         tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -186,13 +187,13 @@
         android:layout_height="50dp"
         android:background="@color/black"
         android:onClick="goToProfile"
-        android:src="@drawable/ic_profile_nonactive"
+        android:src="@drawable/ic_profile_active"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.983"
+        app:layout_constraintVertical_bias="0.977"
         tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
 
     <fragment
@@ -206,5 +207,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.853" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="47dp"
+        android:layout_height="16dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="#FF8A00"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="40dp"
+        android:layout_height="17dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="Goals"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="55dp"
+        android:layout_height="14dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="Profile"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

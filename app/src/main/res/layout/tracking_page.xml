@@ -10,8 +10,8 @@
 
     <View
         android:id="@+id/rectangle_6"
-        android:layout_width="413dp"
-        android:layout_height="68dp"
+        android:layout_width="412dp"
+        android:layout_height="72dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/navigation_rectangle"
@@ -39,55 +39,6 @@
         app:layout_constraintVertical_bias="0.095" />
 
     <TextView
-        android:id="@+id/timeText"
-        android:layout_width="127dp"
-        android:layout_height="46dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center"
-        android:text="1h25m"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.978"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:fontFamily="@font/montserrat_thin"
-        android:gravity="center"
-        android:text="time"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:fontFamily="@font/montserrat_thin"
-        android:gravity="center"
-        android:text="m"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/stepCounterTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,9 +63,26 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.472"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:text="cal"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -128,10 +96,26 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
+        app:layout_constraintVertical_bias="0.472"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:text="m"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -148,22 +132,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.275"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:fontFamily="@font/montserrat_thin"
-        android:gravity="center"
-        android:text="cal"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
         tools:ignore="MissingConstraints" />
 
     <!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
@@ -186,60 +154,46 @@
 
     <ImageButton
         android:id="@+id/goToTrackingPageButton"
-        android:layout_width="48dp"
-        android:layout_height="64dp"
-        android:backgroundTint="#FFEFDC"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:backgroundTint="@color/black"
         android:src="@drawable/ic_walking_active"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994"
+        app:layout_constraintVertical_bias="0.975"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/goToGoalsButton"
-        android:layout_width="79dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#FFEFDC"
+        android:layout_width="49dp"
+        android:layout_height="44dp"
+        android:background="@color/black"
         android:onClick="goToGoals"
         android:src="@drawable/ic_goals_nonactive"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.991"
+        app:layout_constraintVertical_bias="0.975"
         tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/goToProfileButton"
-        android:layout_width="64dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#FFEFDC"
-        android:onClick= "goToProfile"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:onClick="goToProfile"
         android:src="@drawable/ic_profile_nonactive"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintHorizontal_bias="0.839"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994"
+        app:layout_constraintVertical_bias="0.983"
         tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goToGoals"
-        android:text="Goals"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
 
     <fragment
         android:id="@+id/mapView"

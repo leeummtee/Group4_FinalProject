@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     calTextView.setText(String.valueOf(stepCount/25)); //sets the value of the textview to the amount of calories burned
 
                     //in general, the average step is about 0.79m or 0.00079km
-                    distanceTextView.setText(String.valueOf(stepCount * 0.79));
+//                    distanceTextView.setText(String.valueOf(stepCount * 0.0));
                 }
             }
 

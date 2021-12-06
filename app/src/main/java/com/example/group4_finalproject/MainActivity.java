@@ -68,10 +68,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         TaskLoadedCallback {
     private static final int PERMISSION_REQUEST_CODE = 1;
     //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
-    private TextView textViewStepCounter, dateTextView;
+    private TextView textViewStepCounter, dateTextView, calTextView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
-    private Integer calorieCount = 0;
     private ProgressBar progressBar;
     int i = 0;
     public static final String DEFAULT = "not available";
@@ -115,6 +114,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Calendar calendar = Calendar.getInstance();
         String date = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
         dateTextView.setText(date);
+
+        //set the calorie count to the textview
+        calTextView = (TextView) findViewById(R.id.calText);
+
 
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -163,6 +166,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         progressBar.setProgress(stepCount); //set the progress bar's progress based on steps
                     }
                     textViewStepCounter.setText(stepCount.toString());
+
+                    //changes the textview for calories dynamically
+                    //in general, burn about 0.04 calories per step or 4 calories per 100 steps
+                    calTextView.setText(String.valueOf(stepCount/25)); //sets the value of the textview to the amount of calories burned
+
                 }
             }
 
@@ -177,6 +185,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         String url = getUrl(place1.getPosition(), place2.getPosition(), "driving");
         new FetchURL(MainActivity.this).execute(url, "driving");
+
+
     }
 
 
@@ -415,17 +425,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    //this method will calculate the general amount of calories burned per step
+
     //in general, burn about 0.04 calories per step or 4 calories per 100 steps
-    public int calculateCal(Integer g) {
-      if (stepCount>=1) {
-          calorieCount++;
-      }
-      return calorieCount;
-    }
 
     //this method will calculate the average distance per step
     //in general, the average step is about 2.5feet
+    public void calculateDistance(Integer g) {
+
+    }
 
     @Override
     public boolean onMyLocationButtonClick() {

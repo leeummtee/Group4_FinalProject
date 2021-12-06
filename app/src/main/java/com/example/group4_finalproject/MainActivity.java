@@ -5,8 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
+
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -41,22 +40,20 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.example.group4_finalproject.databinding.ActivityMapsBinding;
 import com.example.group4_finalproject.directionhelpers.FetchURL;
 import com.example.group4_finalproject.directionhelpers.TaskLoadedCallback;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -387,6 +384,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void goToGoals(View view) {
         Intent intent = new Intent(this, GoalsActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToProfile(View view) {
+        Intent intent = new Intent(this, ProfileStats.class);
         startActivity(intent);
     }
 

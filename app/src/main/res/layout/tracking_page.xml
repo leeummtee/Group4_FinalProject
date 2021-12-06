@@ -8,6 +8,19 @@
 
     <!--    https://www.youtube.com/watch?v=YsHHXg1vbcc-->
 
+    <View
+        android:id="@+id/rectangle_6"
+        android:layout_width="413dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/navigation_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="280dp"
@@ -153,6 +166,8 @@
         app:layout_constraintVertical_bias="0.529"
         tools:ignore="MissingConstraints" />
 
+    <!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
+
     <TextView
         android:id="@+id/dateText"
         android:layout_width="wrap_content"
@@ -163,26 +178,55 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
-<!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:itemBackground ="@color/white"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
+
+    <ImageButton
+        android:id="@+id/goToTrackingPageButton"
+        android:layout_width="48dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#FFEFDC"
+        android:src="@drawable/ic_walking_active"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.994"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/goToGoalsButton"
+        android:layout_width="79dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#FFEFDC"
+        android:onClick="goToGoals"
+        android:src="@drawable/ic_goals_nonactive"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991"
+        tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/goToProfileButton"
+        android:layout_width="64dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#FFEFDC"
+        android:onClick= "goToProfile"
+        android:src="@drawable/ic_profile_nonactive"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994"
+        tools:ignore="DuplicateIds,OnClick,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button"
@@ -190,6 +234,7 @@
         android:layout_height="wrap_content"
         android:onClick="goToGoals"
         android:text="Goals"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -204,8 +249,9 @@
         android:layout_height="254dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882" />
+        app:layout_constraintVertical_bias="0.853" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

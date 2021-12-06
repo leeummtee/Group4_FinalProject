@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         TaskLoadedCallback {
     private static final int PERMISSION_REQUEST_CODE = 1;
     //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA&ab_channel=ProgrammerWorld
-    private TextView textViewStepCounter, dateTextView, calTextView;
+    private TextView textViewStepCounter, dateTextView, calTextView, distanceTextView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
     private ProgressBar progressBar;
@@ -118,6 +118,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //set the calorie count to the textview
         calTextView = (TextView) findViewById(R.id.calText);
 
+        //set the distance to the textview
+        distanceTextView = (TextView) findViewById(R.id.distanceText);
 
         textViewStepCounter = findViewById(R.id.stepCounterTextView);
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -171,6 +173,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     //in general, burn about 0.04 calories per step or 4 calories per 100 steps
                     calTextView.setText(String.valueOf(stepCount/25)); //sets the value of the textview to the amount of calories burned
 
+                    //in general, the average step is about 0.79m or 0.00079km
+                    distanceTextView.setText(String.valueOf(stepCount * 0.79));
                 }
             }
 
@@ -424,12 +428,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        }
     }
 
-
-
-    //in general, burn about 0.04 calories per step or 4 calories per 100 steps
-
-    //this method will calculate the average distance per step
-    //in general, the average step is about 2.5feet
     public void calculateDistance(Integer g) {
 
     }

@@ -47,6 +47,7 @@ import com.example.group4_finalproject.directionhelpers.TaskLoadedCallback;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -123,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
+//        MapFragment mapFragment = (MapFragment) getFragmentManager()
+//                .findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
 //        mapIntent();
 
@@ -241,8 +244,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         String output = "json";
 
         //building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters + "&key=" +
-                getString(R.string.google_maps_key);
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters + "&key=" + getString(R.string.google_maps_key);
 
         return url;
     }

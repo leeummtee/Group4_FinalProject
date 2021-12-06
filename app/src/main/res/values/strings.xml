@@ -4,4 +4,5 @@
     <string name="title_location_permission">loc1</string>
     <string name="text_location_permission">loc2</string>
     <string name="ok">ok</string>
+    <string name="google_maps_key">AIzaSyCyNow4GBok0L4QXjy89FoffHnTxuC6WpE</string>
 </resources>
